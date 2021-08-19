@@ -1,0 +1,27 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightblue;
+  font-family: "Poppins", sans-serif;
+}
+
+#quote-box {
+  width: 500px;
+  height: 300px;
+  background: #f6f6f6;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  #text {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  #author {
+    font-weight: 1.2rem;
+    font-weight: lighter;
+  }
+}
