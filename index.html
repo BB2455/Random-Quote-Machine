@@ -4,10 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Random Quote App</title>
   </head>
   <body>
+    <div id="wrapper">
+      <div id="quote-box">
+        <div id="quote-text">
+          <div id="text">
+            <span>This is a quote!</span>
+          </div>
+          <div id="author">
+            <span>- Anonymous</span>
+          </div>
+        </div>
+        <div id="quote-actions">
+          <div id="quote-share">
+            <a href="#" id="tweet-quote">Tweet</a>
+          </div>
+          <button id="new-quote">New Quote</button>
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <script src="./script.js"></script>
   </body>
