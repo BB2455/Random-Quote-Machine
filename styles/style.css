@@ -15,7 +15,7 @@ body {
 
 #quote-box {
   width: 500px;
-  height: 300px;
+  min-height: 300px;
   background: #f6f6f6;
   border-radius: 30px;
   display: -webkit-box;
@@ -28,18 +28,64 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 1px 4px 10px 2px #000000;
+          box-shadow: 1px 4px 10px 2px #000000;
 }
 
-#quote-box #text {
-  font-size: 2rem;
+#quote-box #quote-text {
+  width: 90%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#quote-box #quote-text #text {
+  margin-top: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
-#quote-box #author {
+#quote-box #quote-text #text ::before,
+#quote-box #quote-text #text ::after {
+  content: '"';
+  font-size: 2rem;
+}
+
+#quote-box #quote-text #author {
   font-weight: 1.2rem;
   font-weight: lighter;
+  margin-bottom: 1rem;
+  text-align: end;
+  margin-right: 2rem;
+}
+
+#quote-box #quote-actions {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 550px) {
+  #quote-box {
+    width: 90vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */
