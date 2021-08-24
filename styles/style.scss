@@ -9,7 +9,7 @@ body {
 
 #quote-box {
   width: 500px;
-  min-height: 300px;
+  min-height: 200px;
   background: #f6f6f6;
   border-radius: 30px;
   display: flex;
@@ -23,7 +23,7 @@ body {
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     #text {
       margin-top: 2rem;
       font-size: 1.5rem;

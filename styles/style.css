@@ -15,7 +15,7 @@ body {
 
 #quote-box {
   width: 500px;
-  min-height: 300px;
+  min-height: 200px;
   background: #f6f6f6;
   border-radius: 30px;
   display: -webkit-box;
@@ -45,8 +45,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #quote-box #quote-text #text {

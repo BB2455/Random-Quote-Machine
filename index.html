@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Quote App</title>
+    <!-- Stylesheets -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,21 +23,24 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/style.css" />
-    <title>Random Quote App</title>
+    <!-- Scripts -->
+    <script
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
+    ></script>
+    <script defer src="./script.js"></script>
   </head>
   <body>
     <div id="wrapper">
       <div id="quote-box">
         <div id="quote-text">
-          <div id="text">
-            <span
-              >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio,
-              aut?</span
-            >
-          </div>
-          <div id="author">
-            <span>-Anonymous</span>
-          </div>
+          <span id="text"></span>
+
+          <span id="author"></span>
         </div>
         <div id="quote-actions">
           <div id="quote-share">
@@ -54,11 +59,15 @@
               ><i class="bi bi-facebook"></i
             ></a>
           </div>
-          <button id="new-quote" class="btn btn-dark">New Quote</button>
+          <button
+            title="Get a new quote!"
+            id="new-quote"
+            class="btn btn-primary"
+          >
+            New Quote
+          </button>
         </div>
       </div>
     </div>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <script src="./script.js"></script>
   </body>
 </html>
