@@ -22,6 +22,9 @@ const getQuotesData = async () => {
 };
 
 const setupSocials = (quote, author) => {
+  if (!author) {
+    author = "Anonymous";
+  }
   // Twitter
   $("#tweet-quote").attr(
     "href",
@@ -44,15 +47,15 @@ const getQuote = () => {
   isAnimating = true;
   let quote = getRandomQuote();
   $("#text").animate({ opacity: 0 }, 250, function () {
-    $(this).animate({ opacity: 1 }, 250);
-    $(this).html(quote.text);
-    setupSocials(quote.text, quote.author); // Will setup new social href once the quote changes.
-  });
-  $("#author").animate({ opacity: 0 }, 250, function () {
     $(this).animate({ opacity: 1 }, 250, function () {
       // Will run after finishing animating new quote to screen.
       isAnimating = false;
     });
+    $(this).html(quote.text);
+    setupSocials(quote.text, quote.author); // Will setup new social href once the quote changes.
+  });
+  $("#author").animate({ opacity: 0 }, 250, function () {
+    $(this).animate({ opacity: 1 }, 250);
     // Check to see if there is a author if not will say anonymous.
     if (!quote.author) {
       $(this).html("-Anonymous");
