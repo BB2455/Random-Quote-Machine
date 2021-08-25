@@ -29,10 +29,13 @@ const setupSocials = (quote, author) => {
   );
 };
 
+// Will return random quote entry as {text: 'quote', author: 'author'}
 const getRandomQuote = () => {
   return QUOTES_DATA[Math.floor(Math.random() * QUOTES_DATA.length)];
 };
 
+// Check to see if the function was called and is running before moving
+// on, getting a new quote and animating the new quote to the screen.
 let isAnimating = false;
 const getQuote = () => {
   if (isAnimating == true) {
@@ -40,15 +43,17 @@ const getQuote = () => {
   }
   isAnimating = true;
   let quote = getRandomQuote();
-  setupSocials(quote.text, quote.author);
   $("#text").animate({ opacity: 0 }, 250, function () {
     $(this).animate({ opacity: 1 }, 250);
     $(this).html(quote.text);
+    setupSocials(quote.text, quote.author); // Will setup new social href once the quote changes.
   });
   $("#author").animate({ opacity: 0 }, 250, function () {
     $(this).animate({ opacity: 1 }, 250, function () {
+      // Will run after finishing animating new quote to screen.
       isAnimating = false;
     });
+    // Check to see if there is a author if not will say anonymous.
     if (!quote.author) {
       $(this).html("-Anonymous");
     } else {
@@ -57,11 +62,10 @@ const getQuote = () => {
   });
 };
 
-const newQuote = () => {
-  getQuote();
-};
-
 $(function () {
   getQuotesData(); // Will get quotes data from api link then set the quote text with getQuote function.
-  $("#new-quote").click(newQuote);
+  // Setup click event listener.
+  $("#new-quote").click(() => {
+    getQuote();
+  });
 });
