@@ -21,21 +21,34 @@ const getQuotesData = async () => {
   });
 };
 
-const setupSocials = (quote, author) => {};
+const setupSocials = (quote, author) => {
+  // Twitter
+  $("#tweet-quote").attr(
+    "href",
+    encodeURI(`https://twitter.com/intent/tweet?text="${quote}" ${author}`)
+  );
+};
 
 const getRandomQuote = () => {
   return QUOTES_DATA[Math.floor(Math.random() * QUOTES_DATA.length)];
 };
 
+let isAnimating = false;
 const getQuote = () => {
+  if (isAnimating == true) {
+    return;
+  }
+  isAnimating = true;
   let quote = getRandomQuote();
   setupSocials(quote.text, quote.author);
-  $("#text").animate({ opacity: 0 }, 500, function () {
-    $(this).animate({ opacity: 1 }, 500);
+  $("#text").animate({ opacity: 0 }, 250, function () {
+    $(this).animate({ opacity: 1 }, 250);
     $(this).html(quote.text);
   });
-  $("#author").animate({ opacity: 0 }, 500, function () {
-    $(this).animate({ opacity: 1 }, 500);
+  $("#author").animate({ opacity: 0 }, 250, function () {
+    $(this).animate({ opacity: 1 }, 250, function () {
+      isAnimating = false;
+    });
     if (!quote.author) {
       $(this).html("-Anonymous");
     } else {
